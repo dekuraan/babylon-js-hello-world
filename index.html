@@ -68,8 +68,16 @@
             var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
             light.intensity = 0.7;
 
-            var sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
-            sphere.position.y = 1;
+            // var sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
+            // sphere.position.y = 1;
+
+            BABYLON.SceneLoader.Append("FlightHelmet/", "FlightHelmet.gltf", scene, function (scene) {
+                // Create a default arc rotate camera and light.
+                // scene.createDefaultCameraOrLight(true, true, true);
+
+                // The default camera looks at the back of the asset.
+                // Rotate the camera by 180 degrees to the front of the asset.
+            });
 
             const env = scene.createDefaultEnvironment();
 
